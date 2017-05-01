@@ -11,7 +11,7 @@ namespace Fwg.Core
 
         public PowershellPreparer(string pathToFfmpeg)
         {
-            if(!File.Exists(pathToFfmpeg))
+            if (!File.Exists(pathToFfmpeg))
                 throw new FileNotFoundException("Couldn't finde ffmpeg.exe", pathToFfmpeg);
 
             this.pathToFfmpeg = pathToFfmpeg;
@@ -22,7 +22,7 @@ namespace Fwg.Core
             return $@"
 .""{this.pathToFfmpeg}"" `
     -i ""{inputMovie}"" `
-    -ss {position.ToString("g",CultureInfo.InvariantCulture)} `
+    -ss {position.ToString("g", CultureInfo.InvariantCulture)} `
     -vframes 1 `
     ""{outputImage}""
 ";
@@ -42,7 +42,7 @@ namespace Fwg.Core
             }
 
             var path = Path.GetTempFileName();
-            File.WriteAllText(path,sb.ToString());
+            File.WriteAllText(path, sb.ToString());
 
             return $@"
 .""{this.pathToFfmpeg}"" `
@@ -52,6 +52,18 @@ namespace Fwg.Core
     -c copy `
     ""{ouput}""
 ";
+        }
+
+
+        /// <summary>
+        /// Encode to H.265
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="ouput"></param>
+        /// <returns></returns>
+        public string Encode(string input, string ouput, EncodingSettings encodingSettingsVideo, EncodingSettings encodingSettingsAudio)
+        {
+            return null;
         }
     }
 }

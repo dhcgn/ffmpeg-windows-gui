@@ -9,6 +9,7 @@ using NUnit.Framework;
 
 namespace Fwg.Core.Test
 {
+
     [TestFixture]
     public class PowershellPreparerTest
     {

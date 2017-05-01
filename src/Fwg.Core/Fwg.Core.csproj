@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EncodingSettings.cs" />
     <Compile Include="PowershellExecutor.cs" />
     <Compile Include="PowershellPreparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
